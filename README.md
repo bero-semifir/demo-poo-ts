@@ -45,6 +45,8 @@ Toujours dans l'idée de limité la duplication de code, il est possible qu'une 
 
 Un classe B qui hérite d'une classe A recevra les méthodes *visibles* de cette classe.
 
+> un cas pratique de l'héritage: Quand on a besoin d'utiliser une version spécifique d'une classe. La spécificité mène généralement à l'héritage.
+
 On passe par le mot clé **extends**:
 
 ```ts
@@ -54,6 +56,18 @@ On passe par le mot clé **extends**:
 ```
 
 Ici la classe VoitureThermique peut utiliser les méthodes visible de la classe Voiture. Elle aura aussi les attributs visible de sa classe mère.
+
+Si la classe VoitureThermique doit utiliser une méthode de la classe parent, elle peut l'utiliser tel quel ou la **redéfinir**.
+
+Pour redéfinir une fonction il faut la retaper dans la classe fille:
+
+- même nom
+- même visibilitée
+- même type de retour
+- même arguments
+- même type d'arguments
+
+Seul la logique doit varier.
 
 ### Polymorphisme
 

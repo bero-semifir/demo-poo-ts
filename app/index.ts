@@ -1,4 +1,6 @@
 import { Voiture } from "./Voiture";
+import { VoitureElectrique } from "./VoitureElectrique";
+import { VoitureThermique } from "./VoitureThermique";
 
 // instance de la classe Voiture
 console.log("Nombre de voiture: " + Voiture.compteur);
@@ -25,3 +27,14 @@ voiture2.rouler(5);
 
 // appel de méthode static depuis la classe voiture
 Voiture.décrireVoiture(voiture1);
+
+const voiture3 = new VoitureThermique("Orange","McLaren", 5, 40, 20);
+
+voiture3.rouler(20);
+
+const voiture4 = new VoitureElectrique("Verte", "Tesla", 5, 100, 13.9);
+
+voiture4.rouler(100);
+console.log(voiture4);
+voiture4.recharger(10);
+console.log(voiture4);

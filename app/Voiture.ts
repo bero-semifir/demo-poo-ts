@@ -3,7 +3,7 @@ export class Voiture {
     // attribut d'une classe (variables)
     public couleur: string;
     public marque: string;
-    private _nbRoues!: number;
+    protected _nbRoues!: number;
     // mot clé static: rend un attribut ou une méthode partagé entre les instances de classes (entre tous les objets)
     public static compteur:number = 0;
 

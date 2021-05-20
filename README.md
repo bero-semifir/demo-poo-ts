@@ -40,7 +40,20 @@ Par exemple: Le calcul des intérets d'un compte en banque ne concerne que l'obj
 
 ### Héritage
 
-Coming soon&trade;
+L'héritage est le deuxième pillier de l'orienté objet.
+Toujours dans l'idée de limité la duplication de code, il est possible qu'une classe hérite d'une autre classe.
+
+Un classe B qui hérite d'une classe A recevra les méthodes *visibles* de cette classe.
+
+On passe par le mot clé **extends**:
+
+```ts
+    class VoitureThermique extends Voiture {
+        //...
+    }
+```
+
+Ici la classe VoitureThermique peut utiliser les méthodes visible de la classe Voiture. Elle aura aussi les attributs visible de sa classe mère.
 
 ### Polymorphisme
 

@@ -29,11 +29,11 @@ export class Voiture {
 
     // mutateur (setter): permet de changer la valeur d'un attribut de manière sécurisée.
     // set nbRoues(nbRoues: number){
-        // if(nbRoues>0 && nbRoues<5){
-        //     this._nbRoues = nbRoues;
-        // }else{
-        //     this._nbRoues = 4;
-        // }
+    //     if(nbRoues>0 && nbRoues<5){
+    //         this._nbRoues = nbRoues;
+    //     }else{
+    //         this._nbRoues = 4;
+    //     }
     // }
 
     // setter façon Java / C++ etc. Utilisable dans le consctructeur

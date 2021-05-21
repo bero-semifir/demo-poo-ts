@@ -30,6 +30,27 @@ public: visible partout, en dehors de la classe comme à l'intérieur.
 
 Le mot clé static attache un attribut ou une méthode directement à la classe (et non à l'objet de la classe). Il n'y a donc pas besoin d'instancier un objet pour utiliser une méthode static. Les attribut static sont aussi accéssible sans instance d'objet et permettent par exemple de partager une variable entre toutes les instance de la classe.
 
+## Interfaces
+
+Les interfaces sont une forme de contrat que les classes doivent respecter.
+Un classe qui implémente une interface doit absolument implémenter les méthodes et les attributs de l'interface.
+
+```js
+export interface Rechargeable {
+    
+    // attribut à implémenter
+    niveauBatterie: number;
+
+    // méthode à implémenter
+    recharger(montant: number): void;
+    
+}
+```
+
+Ici les objets de classes qui implémentent l'interface Rechargeable auront forcément une méthode `recharger(montant: number): void`.
+
+C'est un moyen de s'assurer de la compatibilité entre les objets. Par exemple une station de recharge contient des objets `Rechargeable` et appelera la méthode `recharger()` de chacun de ces objets.
+
 ## Les principes de l'orienté Objet
 
 ### Encapsulation

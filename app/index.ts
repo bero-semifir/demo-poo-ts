@@ -1,6 +1,8 @@
-import { Voiture } from "./Voiture";
-import { VoitureElectrique } from "./VoitureElectrique";
-import { VoitureThermique } from "./VoitureThermique";
+import { Rechargeable } from "./voiture/interfaces/Rechargeable";
+import { Voiture } from "./voiture/Voiture";
+import { VoitureElectrique } from "./voiture/VoitureElectrique";
+import { VoitureHybride } from "./voiture/VoitureHybride";
+import { VoitureThermique } from "./voiture/VoitureThermique";
 
 // instance de la classe Voiture
 console.log("Nombre de voiture: " + Voiture.compteur);
@@ -32,9 +34,33 @@ const voiture3 = new VoitureThermique("Orange","McLaren", 5, 40, 20);
 
 voiture3.rouler(20);
 
-const voiture4 = new VoitureElectrique("Verte", "Tesla", 5, 100, 13.9);
+const voitureElectrique = new VoitureElectrique("Verte", "Tesla", 5, 100, 13.9);
 
-voiture4.rouler(100);
-console.log(voiture4);
-voiture4.recharger(10);
-console.log(voiture4);
+voitureElectrique.rouler(100);
+console.log(voitureElectrique);
+voitureElectrique.recharger(10);
+console.log(voitureElectrique);
+
+
+const voitureHybride = new VoitureHybride("Blanche", "Toyota", 4, 50, 5);
+
+// la station de recharge est un tableau d'objets qui implémentent l'interface rechargeable
+const stationRecharge: Rechargeable[] = [
+    voitureHybride,
+    voitureElectrique
+]
+// Pour chacun des éléments présent dans stationRecharge
+stationRecharge.forEach((voitureRechargeable)=>{
+    // effectuer une action: ici recharger
+    console.log(voitureRechargeable);
+    voitureRechargeable.recharger(100);
+})
+
+
+/*
+version C du foreach
+for (let i = 0; i < stationRecharge.length; i++) {
+    const voitureRechargeable = stationRecharge[i];
+    voitureRechargeable.recharger(100);
+}
+*/

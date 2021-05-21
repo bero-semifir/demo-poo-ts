@@ -1,16 +1,17 @@
+import { Rechargeable } from "./interfaces/Rechargeable";
 import { Voiture } from "./Voiture";
 
-export class VoitureElectrique extends Voiture {
+// La classe VoitureElectrique hérite de la classe Voiture et implémente l'interface Rechargeable
+export class VoitureElectrique extends Voiture implements Rechargeable {
 
-    protected niveauBatterie: number = 100;
+    niveauBatterie: number = 100;
     protected consomation: number = 13.9;
     
     constructor(couleur: string, marque: string, nbRoues: number, niveauBatterie: number, consomation: number){
-        super(couleur, marque, 5);
+        super(couleur, marque, nbRoues);
 
         this.niveauBatterie = niveauBatterie;
         this.consomation = consomation;
-
     }
 
     // redéfinition de la méthode rouler du parent spécifique à la voiture électrique

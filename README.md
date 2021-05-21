@@ -47,9 +47,23 @@ export interface Rechargeable {
 }
 ```
 
-Ici les objets de classes qui implémentent l'interface Rechargeable auront forcément une méthode `recharger(montant: number): void`.
+Ici les objets de classes qui implémentent l'interface `Rechargeable` auront forcément une méthode `recharger(montant: number): void`.
 
-C'est un moyen de s'assurer de la compatibilité entre les objets. Par exemple une station de recharge contient des objets `Rechargeable` et appelera la méthode `recharger()` de chacun de ces objets.
+C'est un moyen de s'assurer de la compatibilité entre les objets. Par exemple une station de recharge contient des objets `Rechargeable` et appelera la méthode `recharger()` de chacun de ces objets:
+
+```js
+// la station de recharge est un tableau d'objets qui implémentent l'interface rechargeable
+const stationRecharge: Rechargeable[] = [
+    voitureHybride,
+    voitureElectrique
+]
+// Pour chacun des éléments présent dans stationRecharge
+stationRecharge.forEach((voitureRechargeable)=>{
+    // effectuer une action: ici recharger
+    console.log(voitureRechargeable);
+    voitureRechargeable.recharger(100);
+})
+```
 
 ## Les principes de l'orienté Objet
 
